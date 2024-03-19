@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro?</title>
+</head>
+<body>
+    <h1>Informe sua Região</h1>
+    <label for="txt">País: </label>
+    <input type="text" name="txt" id="txt">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+    </div>
+    <script>
+        function verificar(){
+            var ver= document.getElementById('txt');
+            var res= document.getElementById('res');
+            var a= ver.value;
+            res.innerHTML= `<p>De ${a} logo</p>`;
+            if(a == 'Brasil'){
+                res.innerHTML += `Você é Nativo <strong>Brasileiro.</strong>`;
+            }else{
+                res.innerHTML += `Você é <strong>Estrangeiro.</strong>`;
+            }
+        }
+    </script>
+</body>
+</html>
