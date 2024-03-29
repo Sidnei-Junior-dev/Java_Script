@@ -12,13 +12,35 @@ function verificar(){
         var img= document.createElement('img');
         img.setAttribute('id', 'foto');
         if(fsex[0].checked){
-            genero= 'Homem';
+            if(idade >= 0 && idade < 10){
+                genero='Criança';
+            }
+            else if(idade < 21){
+                genero='Jovem';
+            }
+            else if(idade < 50){
+                genero='Adulto';
+            }
+            else{
+                genero='Idoso';
+            }
             img.setAttribute('src', 'gg.jpg');
         } else if(fsex[1].checked){
-            genero= 'Mulher';
+            if(idade >= 0 && idade < 10){
+                genero='Criança';
+            }
+            else if(idade < 21){
+                genero='Jovem';
+            }
+            else if(idade < 50){
+                genero='Adulta';
+            }
+            else{
+                genero='Idosa';
+            }
             img.setAttribute('src', 'gg.jpg');
         }
-        res.innerHTML= `Detectamos ${genero} com ${idade} anos.`
+        res.innerHTML= `Detectamos um(a) ${genero} com ${idade} anos.`
         res.appendChild(img);
     }
 }
